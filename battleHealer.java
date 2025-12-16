@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class battleHealer {
     
+    //attribute
     private String name;
     private int health;
     private int damage;
@@ -13,6 +14,10 @@ public class battleHealer {
     private int evoShards;
     private int healLevel;
 
+    /**
+     * Constructor for the battleHealer class
+     * @param name
+     */
     public battleHealer(String name){
         this.name = name;
         health = 100;
@@ -26,6 +31,9 @@ public class battleHealer {
         healLevel = 10;
     }
 
+    /**
+     * Method to eat and recover health
+     */
     public void eat(){
         if(health <= maxHealth - 20){
             System.out.println(name + " has gotten something to eat. They have regained 20 health.");
@@ -38,6 +46,9 @@ public class battleHealer {
         
     }
 
+    /**
+     * Method to increase level, health, and damage using cards
+     */
     public void levelUp(){
         if(cards >= 25){
             System.out.println("You have enough cards to level up!");
@@ -52,6 +63,9 @@ public class battleHealer {
         }
     }
 
+    /**
+     * Method to evolve and increase stats by 1.5 times
+     */
     public void evolve(){
         if(evoShards >= 6&&!evolve){
             System.out.println("You have enough evo shards to evolve!");
@@ -72,6 +86,9 @@ public class battleHealer {
 
 
 
+    /**
+     * Method to heal health
+     */
     public void heal(){
         if(health <= maxHealth - healLevel){
             System.out.println(name + " has used heal. They have regained " + healLevel + " health.");
@@ -82,7 +99,11 @@ public class battleHealer {
             health = maxHealth;
         }
     }
-     public void displayStats() {
+     
+    /**
+     * Method to display stats
+     */
+    public void displayStats() {
         Scanner scanner = new Scanner(System.in); // Fix 3: Initialize scanner locally
         System.out.println("=== " + name + " Stats ===");
         System.out.println("Health: " + health + "/" + maxHealth);
@@ -135,7 +156,11 @@ public class battleHealer {
        
    
 
-
+    /**
+     * Method to attack and deal damage
+     * Chances to get cards after
+     * @param towerHealth
+     */
     public void attack(int towerHealth) {
         System.out.println(name + " attacks the tower!");
         System.out.println("It dealt " + damage + " damage.");
@@ -150,6 +175,10 @@ public class battleHealer {
         cards += cardsEarned;
         System.out.println(name + " earned " + cardsEarned + " cards. Total cards: " + cards);
     }
+    
+    /**
+     * Method that gives evo shards randomly
+     */
     public void getEvolveShard() {
         double chance = Math.random(); // Generate a random number between 0.0 and 1.0
         if (chance <= 0.333) { // 1/3 chance
