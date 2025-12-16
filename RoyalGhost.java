@@ -4,7 +4,7 @@ import java.util.Scanner;
  * The RoyalGhost class represents a virtual pet character with attributes such as health, damage, level, and evolution status.
  * The class provides methods to perform actions like eating, leveling up, evolving, attacking, and displaying stats.
  */
-public class RoyalGhost {
+public class RoyalGhost implements Card {
     private String name; // The name of the Royal Ghost
     private int health; // The current health of the Royal Ghost
     private int damage; // The damage dealt by the Royal Ghost
