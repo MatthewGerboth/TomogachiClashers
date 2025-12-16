@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class battleHealer {
+public class battleHealer implements Card {
     
     //attribute
     private String name;
