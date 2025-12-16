@@ -1,4 +1,4 @@
-public class ElixirGolem {
+public class ElixirGolem implements Card {
     private String name;
     private int health;
     private int damage;
