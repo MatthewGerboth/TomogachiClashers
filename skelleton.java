@@ -3,7 +3,7 @@ import java.util.Scanner;
 /**
  * Represents a skeleton character with various attributes and actions.
  */
-public class skelleton {
+public class skelleton implements Card{
     // Instance variables
     private String name;
     private int health;
@@ -159,3 +159,4 @@ public class skelleton {
         }
     }
 }
+
